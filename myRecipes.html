@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OnlyRecipe</title>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.buttonCSS
+{
+      margin: 0 auto;
+  text-align: center;
+    font-family: titular, sans-serif;
+font-weight: 300;
+font-style: normal;
+  font-size: 50px;
+  padding-top:16px;
+  width:200px;
+}
+
+
+.parText
+{
+    margin: 0 auto;
+  text-align: center;
+    font-family: titular, sans-serif;
+font-weight: 300;
+font-style: normal;
+  font-size: 50px;
+  padding-top:200px;
+}
+.addRecipe
+{
+     margin: 0 auto;
+    align-items:center;
+    font-family: titular, sans-serif;
+font-weight: 300;
+font-style: normal;
+  font-size: 50px;
+  padding-top:200px;
+}
+
+u{
+  text-decoration: underline;
+}
+.nav-link
+{
+  font-family: giddyup-std, sans-serif;
+  
+font-weight: 800;
+}
+</style>
+   
+  <link rel="stylesheet" href="https://use.typekit.net/dtb0fnw.css">
+  <link rel="stylesheet" href="main.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="index.html"> <img src="onlyRecipes logo.png" width="100"> </a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="myRecipes.html" ><font color="#70bdfa"><u>My Recipes</u></font></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="addRecipe.html">Add a Recipe</a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        more links
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+
+
+
+<div class="parText">You don't have any recipes yet.</div>
+<div class ="centerThis" style="text-align: center;">
+<a class= "buttonCSS" href="addRecipe.html" >
+  <input type="button"    value="Add a recipe">
+</a>
+</div>
+
+
+
+
+
+</body>
+</html>
