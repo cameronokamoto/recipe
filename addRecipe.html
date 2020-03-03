@@ -45,15 +45,15 @@
     </nav>
 
   <font class="newRecipe" >New Recipe</font>
-<div ng-app="myIngredientsList" ng-cloak ng-controller="myCtrl">
+<div ng-app="AddRecipe" ng-cloak ng-controller="myCtrl">
 
   <div class = "ImageInput">
-      <h2>Put an image URL from the internet here (optional)</h2>
+      <h2>Copy Paste an image URL from the internet here (optional)</h2>
       <input type="text" ng-model="imageURL" ng-change="addURL()" />
       <img id="picture" ng-src={{recipe.imageUrl}} alt="Get a picture of your delicious food!">
   </div>
 
-  <div class="Shop">
+  <div class="Shop">  
     <div class="w3-card-2 w3-margin" style="max-width:400px;">
       <header class="w3-container w3-light-grey w3-padding-16">
         <h2>Ingredients</h2>
