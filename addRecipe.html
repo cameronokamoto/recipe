@@ -5,214 +5,89 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-.instruct
-{
-  padding-left:220px;
-    font-family: titular, sans-serif;
-
-font-weight: 300;
-
-font-style: normal;
-
-
-  
-}
-.centerThis{
-  padding-left:220px;
-}
-u{
-  
-  text-decoration: underline;
-}
-h2{
-  font-family: titular, sans-serif;
-
-font-weight:bold;
-
-font-size:100px;
-
-}
-
-h3{
-  font-family: titular, sans-serif;
-}
-
-body
-{
-  font-family: giddyup-std, sans-serif;
-}
-
-
-.nav-link
-{
-  font-family: giddyup-std, sans-serif;
-  
-font-weight: 800;
-}
-
-li{
-   font-family: titular, sans-serif;
-   font-size: 30px;
-}
-
-.remove{
-      height:50px;
-      
-  
-}
-.newRecipe
-{
-        padding-top: 40px;
-  padding-right: 80px;
-  padding-bottom: 16px;
-  padding-left: 160px;
-     font-family: titular, sans-serif;
-     font-size:100px;
-}
-
-</style>
+  <link rel="stylesheet" type="text/css" href="style.css">
    
   <link rel="stylesheet" href="https://use.typekit.net/dtb0fnw.css">
-  <link rel="stylesheet" href="main.css">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
   <script src="index.js"></script>
 </head>
-<body>
+  <body>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="index.html"> <img src="onlyRecipes logo.png" width="100"> </a>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <!-- Brand -->
+      <a class="navbar-brand" href="index.html"> <img src="onlyRecipes logo.png" width="100"> </a>
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="myRecipes.html">My Recipes</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="addRecipe.html"><font color="#70bdfa"><u>Add a Recipe</u></font></a>
-    </li>
+      <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="myRecipes.html">My Recipes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="addRecipe.html"><font color="#70bdfa"><u>Add a Recipe</u></font></a>
+        </li>
 
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        more links
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Link 1</a>
-        <a class="dropdown-item" href="#">Link 2</a>
-        <a class="dropdown-item" href="#">Link 3</a>
-      </div>
-    </li>
-  </ul>
-</nav>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            more links
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Link 1</a>
+            <a class="dropdown-item" href="#">Link 2</a>
+            <a class="dropdown-item" href="#">Link 3</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
 
-<font class="newRecipe" >New Recipe</font>
- 
+  <font class="newRecipe" >New Recipe</font>
+<div ng-app="myIngredientsList" ng-cloak ng-controller="myCtrl">
 
- 
+  <div class = "ImageInput">
+      <h2>Put an image URL from the internet here (optional)</h2>
+      <input type="text" ng-model="imageURL" (change)="addURL()" />
+      <img ng-src={{$scope.recipe.imageUrl}} alt="Get a picture of your delicious food!">
+  </div>
 
-<script>
-var app = angular.module("myIngredientsList", []); 
-app.controller("myCtrl", function($scope) {
-    $scope.ingredients = [];
-    $scope.addItem = function () {
-        $scope.errortext = "";
-         
-        if (!$scope.addMe) {return;}
-        var strs = $scope.addMe.split('\n');
-        
-        if(strs.length == 1)
-        {
-          $scope.ingredients.push(strs[0]);
-        }
-        else
-        {
-          $scope.ingredients = strs;
-        }
-        document.getElementById("ingInput").value = "";
-    }
-    $scope.keyPress = function()
-    {
-      var key = window.event.keyCode;
-      if (key === 13)
-      {
-        addItem();
-      }
-    }
-    $scope.removeItem = function (x) {
-        $scope.errortext = "";    
-        $scope.ingredients.splice(x, 1);
-    }
-});
-app.controller("myCtrl2", function($scope) {
-    $scope.instructions = [];
-   
-    $scope.addInstruction = function () {
-        $scope.errorT = "";
-         
-        if (!$scope.addInstruction) {return;}
-        if ($scope.instructions.indexOf($scope.addInstruction) == -1) {
-            $scope.instructions.push($scope.addInstruction);
-             document.getElementById("w3-col s10").placeholder = "";
-        } else {
-            $scope.errorT = "The item is already in your shopping list.";
-        }
-      
-    }
-    $scope.removeInstruction = function (instruction) {
-        $scope.errorT = "";    
-        $scope.instructions.splice(instruction, 1);
-    }
-});
-
-
-
-</script>
-<div id="Shop">
-<div ng-app="myIngredientsList" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin" style="max-width:400px;">
-  <header class="w3-container w3-light-grey w3-padding-16">
-    <h2>Ingredients</h2>
-  </header>
-  <ul class="w3-ul">
-    <li ng-repeat="x in ingredients" class="w3-padding-16">{{x}}<span ng-click="removeItem($index)" style="cursor:pointer;" class="w3-right w3-margin-right" style="background-color:white;"><img src="primary-tab-remove.svg" width="12"hspace="20"  /></span></li>
-  </ul>
-  <div class="w3-container w3-light-grey w3-padding-16">1
-    <div class="w3-row w3-margin-top">
-      <div class="w3-col s11">
-        <textarea id="ingInput" rows="5" cols="50" placeholder="Copy your ingredients list into this box, or add a single ingredient" 
-        ng-model="addMe" class="w3-input w3-border w3-padding">
-          </textarea>
-        <button ng-click="addItem()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add</button>
+  <div class="Shop">
+    <div class="w3-card-2 w3-margin" style="max-width:400px;">
+      <header class="w3-container w3-light-grey w3-padding-16">
+        <h2>Ingredients</h2>
+      </header>
+      <ul class="w3-ul">
+        <li ng-repeat="x in ingredients" class="w3-padding-16">{{x}}<span ng-click="removeIngredient($index)" style="cursor:pointer;" class="w3-right w3-margin-right" 
+          style="background-color:white;"><img src="primary-tab-remove.svg" width="12"hspace="20"  /></span></li>
+      </ul>
+      <div class="w3-container w3-light-grey w3-padding-16">
+        <div class="w3-row w3-margin-top">
+          <div class="w3-col s11">
+            <textarea id="ingInput" rows="5" cols="80" placeholder="Copy your ingredients list into this box, or add a single ingredient" 
+            ng-model="addMe" class="w3-input w3-border w3-padding" ng-keypress="keyPress($event)">
+              </textarea>
+            <button ng-click="addIngredient()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add</button>
+          </div>
+        </div>
+        <p class="w3-text-red">{{errortext}}</p>
       </div>
     </div>
-    <p class="w3-text-red">{{errortext}}</p>
   </div>
+
+  <div class="instruct"><h2>Instructions</h2><br>
+      <textarea rows="5" cols="80" id="instructionsText" ng-model="instructionsText" 
+      placeholder="Copy paste the instructions for your recipe here">
+      </textarea>
+  </div>
+
+    <div class ="centerThis">
+      <a class= "buttonCSS">
+        <input type="button" ng-click="addToRecipes()" value="Add this recipe">
+      </a>
+    </div>
+
 </div>
-</div> 
-
-<div class="instruct"><h2>Instructions</h2><br>
-  <textarea rows="5" cols="80" id="TITLE">
-</textarea>
-  
-</div>
-
-
-
-<div class ="centerThis">
-<a class= "buttonCSS" href="success.html" >
-  <input type="button"    value="Add this recipe">
-</a>
-</div>
-
-
-
-
-
-
-</body>
+  </body>
 </html>

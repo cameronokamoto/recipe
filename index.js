@@ -1,9 +1,3 @@
-<script>
-<button onclick="location.reload();">Refresh Page</button>
-</script>
-
-
-
 /**
  * 1. We have added a directive with the name 'avatar' and handler of
  * avatarDirective to our angular app module
@@ -28,6 +22,81 @@ function mainCtrl ($scope) {
     user.email ='';
   };
 }
+
+var app = angular.module("myIngredientsList", []); 
+app.controller("myCtrl", function($scope, $window) 
+{
+    $scope.ingredients = [];
+    $scope.recipe = new recipe;
+    $scope.addToRecipes = function()
+    {
+        if($scope.ingredients.length == 0)
+        {
+            $scope.addIngredient();
+        }
+        console.log("In addToRecipes");
+        $scope.addInstruction();
+        console.log($scope.recipe);
+        //$window.location.href = "success.html";
+    }
+    $scope.addIngredient = function () 
+    {
+        $scope.errortext = "";
+        console.log($scope.recipe)
+        if (!$scope.addMe) {return;}
+        var strs = $scope.addMe.split('\n');
+        
+        if(strs.length == 1)
+        {
+          $scope.ingredients.push(strs[0]);
+        }
+        else
+        {
+          $scope.ingredients = strs;
+        }
+        document.getElementById("ingInput").value = "";
+        $scope.recipe.ingredients = $scope.ingredients;
+    }
+    $scope.addURL = function()
+    {
+        console.log($scope.imageURL);
+        $scope.recipe.imageUrl = $scope.imageURL;
+    }
+    $scope.keyPress = function($event)
+    {
+      var key = $event.keyCode;
+      if (key === 13)
+      {
+        $scope.addIngredient();
+      }
+    }
+    $scope.removeIngredient = function (x) 
+    {
+        $scope.errortext = "";    
+        $scope.ingredients.splice(x, 1);
+    }
+    $scope.addInstruction = function () 
+    {
+      $scope.recipe.instructions = $scope.instructionsText
+      console.log($scope.recipe);
+    }
+});
+
+class user 
+{
+    recipes = [];
+    username = "";
+    password = "";
+}
+
+class recipe
+{
+    ingredients = [];
+    instructions = "";
+    imageUrl = "";
+}
+
+
 
 /**
  * 1. this defines the api of our avatar directive. This means we are

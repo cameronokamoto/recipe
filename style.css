@@ -1,0 +1,77 @@
+.instruct
+{
+    padding-left:220px;
+    font-family: titular, sans-serif;
+    font-weight: 300;
+    font-size: 150%;
+    font-style: normal;
+}
+.Shop
+{
+    padding-left:220px;
+    font-family: titular, sans-serif;
+    font-weight: 300;
+    font-size: 150%;
+    font-style: normal;
+}
+.ImageInput
+{
+    padding-left:220px;
+    font-family: titular, sans-serif;
+    font-weight: 300;
+    font-size: 150%;
+    font-style: normal;
+    width: 400px;
+}
+.centerThis
+{
+    padding-left:220px;
+    padding-bottom: 100px;
+}
+u
+{
+    text-decoration: underline;
+}
+h2
+{
+    font-family: titular, sans-serif;
+    font-weight:bold;
+    font-size:100px;
+}
+
+h3
+{
+    font-family: titular, sans-serif;
+}
+
+body
+{
+  font-family: giddyup-std, sans-serif;
+}
+
+
+.nav-link
+{
+    font-family: giddyup-std, sans-serif;
+    font-weight: 800;
+}
+
+li
+{
+    font-family: titular, sans-serif;
+    font-size: 30px;
+}
+
+.remove
+{
+    height:50px;
+}
+.newRecipe
+{
+    padding-top: 40px;
+    padding-right: 80px;
+    padding-bottom: 16px;
+    padding-left: 160px;
+    font-family: titular, sans-serif;
+    font-size:100px;
+}
