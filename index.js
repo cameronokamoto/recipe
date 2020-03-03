@@ -42,7 +42,6 @@ app.controller("myCtrl", function($scope, $window)
     $scope.addIngredient = function () 
     {
         $scope.errortext = "";
-        console.log($scope.recipe)
         if (!$scope.addMe) {return;}
         var strs = $scope.addMe.split('\n');
         
@@ -59,8 +58,11 @@ app.controller("myCtrl", function($scope, $window)
     }
     $scope.addURL = function()
     {
-        console.log($scope.imageURL);
+      if($scope.imageURL == "" || $scope.recipe.imageUrl.includes($scope.imageURL)){}
+      else
+      {
         $scope.recipe.imageUrl = $scope.imageURL;
+      }
     }
     $scope.keyPress = function($event)
     {
@@ -77,8 +79,20 @@ app.controller("myCtrl", function($scope, $window)
     }
     $scope.addInstruction = function () 
     {
-      $scope.recipe.instructions = $scope.instructionsText
-      console.log($scope.recipe);
+      if($scope.instructionsText == "") {}
+      else if(!($scope.instructionsText == $scope.recipe.instructions) 
+        && $scope.recipe.instructions != "")
+      {
+          if(confirm("You want to overwrite the current instructions?"))
+          {
+              $scope.recipe.instructions = $scope.instructionsText
+          }
+          else{return;}
+      }
+      else
+      { 
+        $scope.recipe.instructions = $scope.instructionsText
+      }
     }
 });
 

@@ -49,8 +49,8 @@
 
   <div class = "ImageInput">
       <h2>Put an image URL from the internet here (optional)</h2>
-      <input type="text" ng-model="imageURL" (change)="addURL()" />
-      <img ng-src={{$scope.recipe.imageUrl}} alt="Get a picture of your delicious food!">
+      <input type="text" ng-model="imageURL" ng-change="addURL()" />
+      <img id="picture" ng-src={{recipe.imageUrl}} alt="Get a picture of your delicious food!">
   </div>
 
   <div class="Shop">
@@ -68,7 +68,7 @@
             <textarea id="ingInput" rows="5" cols="80" placeholder="Copy your ingredients list into this box, or add a single ingredient" 
             ng-model="addMe" class="w3-input w3-border w3-padding" ng-keypress="keyPress($event)">
               </textarea>
-            <button ng-click="addIngredient()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add</button>
+            <button ng-click="addIngredient()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add Ingredient(s)</button>
           </div>
         </div>
         <p class="w3-text-red">{{errortext}}</p>
@@ -80,11 +80,14 @@
       <textarea rows="5" cols="80" id="instructionsText" ng-model="instructionsText" 
       placeholder="Copy paste the instructions for your recipe here">
       </textarea>
+      <div class="w3-col s11">
+        <button ng-click="addInstruction()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add Instructions</button>
+      </div>
   </div>
 
     <div class ="centerThis">
       <a class= "buttonCSS">
-        <input type="button" ng-click="addToRecipes()" value="Add this recipe">
+        <input id="AddButton" type="button" ng-click="addToRecipes()" value="Add this recipe">
       </a>
     </div>
 
