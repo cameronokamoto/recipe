@@ -23,11 +23,12 @@ function mainCtrl ($scope) {
   };
 }
 
-var app = angular.module("AddRecipe", []); 
+var app = angular.module("OnlyRecipes", []); 
 app.controller("myCtrl", function($scope, $window) 
 {
     $scope.ingredients = [];
     $scope.recipe = new recipe;
+    $scope.user = new user();
     // Called when the "Add Recipe" button is called, gets what's currently in 
     // the instructions text box (Will ask if its going to change what was already input)
     // and then goes to success.html
@@ -53,7 +54,9 @@ app.controller("myCtrl", function($scope, $window)
             if(confirm("You don't have an image for your recipe, is that OK?")){}
             else{return;}
         }
-        $window.location.href = "success.html";
+        $scope.user.recipes.push($scope.recipe);
+        console.log($scope.user);
+        //$window.location.href = "success.html";
     }
     // Add an ingredient to the list of ingredients, OR process a multi-line list of ingredients
     // into an array of ingredients, then assign it to the recipe we are holding in the scope
@@ -93,6 +96,7 @@ app.controller("myCtrl", function($scope, $window)
       if (key === 13)
       {
         $scope.addIngredient();
+        $scope.addInstruction();
       }
     }
     // Remove the ingredient chosen

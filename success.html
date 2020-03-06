@@ -5,52 +5,11 @@
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-.onlyText{
-  margin: 0 auto;
-  text-align: center;
-    font-family: titular, sans-serif;
-font-weight: 500;
-font-style: normal;
-  font-size: 50px;
-  padding-top:200px;
-  color:#41cc67;
-}
-.buttonCSS
-{
-      margin: 0 auto;
-  text-align: center;
-    font-family: titular, sans-serif;
-font-weight: 300;
-font-style: normal;
-  font-size: 25px;
-  padding-top:16px;
-  width:100px;
-}
-
-h1{
-  font-family: titular, sans-serif;
-
-font-weight: 300;
-
-font-style: normal;
-
-
-}
-
-.nav-link
-{
-  font-family: giddyup-std, sans-serif;
-  
-font-weight: 800;
-}
-</style>
+  <link rel="stylesheet" type="text/css" href="success.css">
  
  
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.typekit.net/dtb0fnw.css">
-  <link rel="stylesheet"  href ="main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -92,13 +51,14 @@ font-weight: 800;
 
 
 
+<div class="SuccessPage" ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl">
+  <div class="onlyText">you have successfully added a recipe :)</div>
 
-<div class="onlyText">you have successfully added a recipe :)</div>
-
-<div class ="centerThis" style="text-align: center;">
-<a class= "buttonCSS" href="addRecipe.html" >
-  <input type="button"    value="Add another one">
-</a>
+    <div class ="centerThis" style="text-align: center;">
+    <a class= "buttonCSS" href="addRecipe.html" >
+      <input type="button" value="Add another one">
+    </a>
+  </div>
 </div>
 
 

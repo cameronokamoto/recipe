@@ -16,10 +16,10 @@ h1
 
 #Shop 
 {
-  padding-top: 40px;
-  padding-right: 80px;
-  padding-bottom: 16px;
-  padding-left: 220px;
+    padding-top: 40px;
+    padding-right: 80px;
+    padding-bottom: 16px;
+    padding-left: 220px;
 }
 
 #Instructions
@@ -33,5 +33,30 @@ h1
 .nav-link 
 {
     font-size:20px;
+}
+
+.onlyText
+{
+    margin: 0 auto;
+    text-align: center;
+    font-family: titular, sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 200px;
+    padding-top:200px;
+}
+  
+  
+h1
+{
+    font-family: titular, sans-serif; 
+    font-weight: 300;
+    font-style: normal;
+}
+  
+.nav-link
+{
+    font-family: giddyup-std, sans-serif;
+    font-weight: 800;
 }
 
