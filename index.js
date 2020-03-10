@@ -4,6 +4,20 @@ app.controller("myCtrl", function($scope, $window)
     $scope.ingredients = [];
     $scope.recipe = new recipe;
     $scope.user = new user();
+
+    $scope.init = function()
+    {
+      localStorage.setItem("user", JSON.stringify($scope.user))
+      if(localStorage.getItem("user") != null)
+      {
+        $scope.user = JSON.parse(localStorage.getItem("user"))
+        console.log($scope.user)
+      }
+      else
+      {
+        console.log("no user to retrieve");
+      }
+    }
     // Called when the "Add Recipe" button is called, gets what's currently in 
     // the instructions text box (Will ask if its going to change what was already input)
     // and then goes to success.html
@@ -145,6 +159,7 @@ class user
 
 class recipe
 {
+    title="";
     ingredients = [];
     instructions = "";
     imageUrl = "";

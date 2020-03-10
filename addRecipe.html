@@ -29,31 +29,26 @@
         <li class="nav-item">
           <a class="nav-link" href="addRecipe.html"><font color="#70bdfa"><u>Add a Recipe</u></font></a>
         </li>
-
-        <!-- Dropdown -->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-            more links
-          </a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Link 1</a>
-            <a class="dropdown-item" href="#">Link 2</a>
-            <a class="dropdown-item" href="#">Link 3</a>
-          </div>
-        </li>
       </ul>
     </nav>
 
   <font class="newRecipe" >New Recipe</font>
-<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl">
-
+<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="init()">
+<div class="TitleAndImage">
+  <div class="TitleInput">
+    <h2>What is your delicious dish called?</h2>
+    <input type="text" ng-model="RecipeTitle">
+    <h2>{{$scope.recipe.title}}</h2>
+  </div>
   <div class = "ImageInput">
       <h2>Copy Paste an image URL from the internet here (optional)</h2>
       <input type="text" ng-model="imageURL" ng-change="addURL()" />
       <img id="picture" ng-src={{recipe.imageUrl}} alt="Get a picture of your delicious food!">
   </div>
+</div>
 
-  <div class="Shop">
+<div class="inputBoxen">
+  <div class="Shop">  
     <div class="w3-card-2 w3-margin" style="max-width:400px;">
       <header class="w3-container w3-light-grey w3-padding-16">
         <h2>Ingredients</h2>
@@ -76,7 +71,7 @@
     </div>
   </div>
 
-  <div class="instruct"><h2>Instructions</h2><br>
+  <div class="instruct"><h2>Instructions</h2>
       <textarea rows="5" cols="80" id="instructionsText" ng-model="instructionsText" 
       placeholder="Copy paste the instructions for your recipe here">
       </textarea>
@@ -84,7 +79,7 @@
         <button ng-click="addInstruction()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add Instructions</button>
       </div>
   </div>
-
+</div>
     <div class ="centerThis">
       <a class= "buttonCSS">
         <input id="AddButton" type="button" ng-click="addToRecipes()" value="Add this Recipe">

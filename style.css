@@ -1,3 +1,15 @@
+.TitleAndImage
+{
+    display:flex;
+    flex-wrap: wrap;
+    padding-left:240px;
+}
+
+.inputBoxen
+{
+    display:flex;
+    flex-wrap: wrap;
+}
 .instruct
 {
     padding-left:240px;
@@ -47,13 +59,13 @@ h3
 
 body
 {
-    font-family: titular, sans-serif;
+  font-family: giddyup-std, sans-serif;
 }
 
 
 .nav-link
 {
-    font-family: titular, sans-serif;
+    font-family: giddyup-std, sans-serif;
     font-weight: 800;
 }
 
