@@ -19,7 +19,7 @@
   <script src="index.js"></script>
   
 </head>
-<body>
+<body onload= "getRecipeData()">
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
@@ -33,52 +33,34 @@
     <li class="nav-item">
       <a class="nav-link" href="addRecipe.html">Add a Recipe</a>
     </li>
-
-
     </li>
   </ul>
 </nav>
 
-<br>
-<br>
-<h1>Store all your recipes here</h1>
-
-<br>
-<br>
-
+<p id="recipeName"></p>
 <div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl">
-
-
-
-  
-  
-  <div class="container">
-    <div id="signUpText">Sign Up</div>
-  <form id="loginForm">
-   
-    <div id="loginLabels">Username:</div>
-      <input type="text" id ="usernameTextBox" ng-model="userText" placeholder="enter username" />
-      
-     
-      <div id="loginLabels">Password:</div>
-      <input type="password" id ="usernameTextBox" ng-model="passwordText" placeholder="enter password"  />
     
-    <br>
-    <br>
-      <label class="form-check-label">
-        <input class="form-check-input" type="checkbox" name="remember"> Remember me
-      </label>
+    
+     <button ng-click="setDummyData()">Submit</button>
+    
+    </div>
+    
+
+
+
+
+
+
+<script>
+function getRecipeData() {
+    
+
+      document.getElementById("recipeName").innerHTML = localStorage.getItem("user");
+      localStorage.setItem("dsfs","sjslkdsfs");
       
-    <button ng-click="login()" class="btn btn-primary">Submit</button>
-  </form>
-</div>
-
-
-</div>
-</div>
-
-
-		
+      
+}
+</script>		
 
 
 </body>

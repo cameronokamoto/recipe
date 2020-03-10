@@ -1,7 +1,5 @@
 
 
-
-
 h1{
 font-family: titular, sans-serif;
 
@@ -14,18 +12,9 @@ h2
 {
     font-family: titular, sans-serif; 
 }
-#signUpText
-{
-        font-size: 50px;
-    font-weight:900;
-}
 
-#loginLabels
-{   
-    font-size: 25px;
-    font-weight:800;
-      margin-top: 20px;
-}
+
+
 
 .nav-link
 {
@@ -43,17 +32,14 @@ font-weight: 800;
  
        
 
-font-weight: 300;
-}
-
-
-#usernameTextBox
-{
-    width:750px;
-    font-size:14pt;
 }
 
 .cities
 {
     font-size: 100px;
+}
+
+.Root div
+{
+    font-family: titular, sans-serif;
 }
