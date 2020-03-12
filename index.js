@@ -3,7 +3,19 @@ app.controller("myCtrl", function($scope, $window)
 {
     $scope.ingredients = [];
     $scope.recipe = new recipe;
-    $scope.user = new user();
+    $scope.NoRecipes = "You have no recipes yet! Click below to add one!"
+    if(localStorage.getItem("user") == undefined)
+    {
+      $scope.user = new user();
+    }
+    else
+    {
+      $scope.user = JSON.parse(localStorage.getItem("user"))
+      if($scope.user.recipes.length != 0)
+      {
+        $scope.NoRecipes = "";
+      }
+    }
 
     $scope.init = function()
     {
@@ -23,6 +35,7 @@ app.controller("myCtrl", function($scope, $window)
     // and then goes to success.html
     $scope.addToRecipes = function()
     {
+        $scope.recipe.title = $scope.RecipeTitle;
         if($scope.ingredients.length == 0)
         {
             $scope.addIngredient();
@@ -43,7 +56,13 @@ app.controller("myCtrl", function($scope, $window)
             if(confirm("You don't have an image for your recipe, is that OK?")){}
             else{return;}
         }
+        if($scope.recipe.title == "")
+        {
+          if(confirm("You don't have a name for your dish, is that ok?")){}
+          else{return;}
+        }
         $scope.user.recipes.push($scope.recipe);
+        localStorage.setItem("user", JSON.stringify($scope.user))
         console.log($scope.user);
         $window.location.href = "success.html";
     }
@@ -144,7 +163,6 @@ app.controller("myCtrl", function($scope, $window)
       //localStorage.setItem("currRecipe",this.recipe);
       
       localStorage.setItem("currRecipe",JSON.stringify(this.recipe));
-     
     }
 
     

@@ -1,6 +1,7 @@
 .buttonCSS
 {
-    margin: 0 auto;
+    margin: 0;
+    align-self: center;
     text-align: center;
     font-family: titular, sans-serif;
     font-weight: 300;
@@ -9,7 +10,6 @@
     padding-top:16px;
     width:200px;
 }
-
 
 .parText
 {
@@ -21,6 +21,7 @@
     font-size: 50px;
     padding-top:200px;
 }
+
 .addRecipe
 {
     margin: 0 auto;
@@ -30,6 +31,23 @@
     font-style: normal;
     font-size: 50px;
     padding-top:200px;
+}
+
+.ImgDisplay
+{
+    max-width: 150px;
+    border-radius: 4px;
+}
+
+ul
+{
+    list-style: none;
+}
+
+.Header
+{
+    text-align: center;
+    font-size: 64px;
 }
 
 u

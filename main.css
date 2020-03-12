@@ -7,11 +7,14 @@
 }
 
 h1
-{  
+{   
     padding-top: 40px;
-    padding-right: 80px;
+    /* padding-right: 80px; */
     padding-bottom: 16px;
-    padding-left: 220px;
+    /* padding-left: 220px; */
+    font-family: titular, sans-serif; 
+    font-weight: 300;
+    font-style: normal;
 }
 
 #Shop 
@@ -46,17 +49,16 @@ h1
     padding-top:200px;
 }
   
-  
-h1
-{
-    font-family: titular, sans-serif; 
-    font-weight: 300;
-    font-style: normal;
-}
-  
 .nav-link
 {
     font-family: titular, sans-serif;
     font-weight: 800;
+}
+
+.centerThis
+{
+    padding-top: 24px;
+    padding-bottom: 80px;
+    align-content: center;
 }
 

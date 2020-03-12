@@ -33,45 +33,37 @@
     </nav>
 
   <font class="newRecipe" >New Recipe</font>
-<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="init()">
+<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="init()" class="AddRecipeClass">
 <div class="TitleAndImage">
-  <div class="TitleInput">
+  <div class="Input">
     <h2>What is your delicious dish called?</h2>
-    <input type="text" ng-model="RecipeTitle">
+      <input type="text" ng-model="RecipeTitle">
     <h2>{{$scope.recipe.title}}</h2>
   </div>
-  <div class = "ImageInput">
+  <div class = "Input">
       <h2>Copy Paste an image URL from the internet here (optional)</h2>
-      <input type="text" ng-model="imageURL" ng-change="addURL()" />
+        <input type="text" ng-model="imageURL" ng-change="addURL()" />
       <img id="picture" ng-src={{recipe.imageUrl}} alt="Get a picture of your delicious food!">
   </div>
 </div>
 
 <div class="inputBoxen">
   <div class="Shop">  
-    <div class="w3-card-2 w3-margin" style="max-width:400px;">
-      <header class="w3-container w3-light-grey w3-padding-16">
         <h2>Ingredients</h2>
-      </header>
       <ul class="w3-ul">
         <li ng-repeat="x in ingredients" class="w3-padding-16">{{x}}<span ng-click="removeIngredient($index)" style="cursor:pointer;" class="w3-right w3-margin-right" 
           style="background-color:white;"><img src="primary-tab-remove.svg" width="12"hspace="20"  /></span></li>
       </ul>
-      <div class="w3-container w3-light-grey w3-padding-16">
-        <div class="w3-row w3-margin-top">
-          <div class="w3-col s11">
-            <textarea id="ingInput" rows="5" cols="80" placeholder="Copy your ingredients list into this box, or add a single ingredient" 
-            ng-model="addMe" class="w3-input w3-border w3-padding" ng-keypress="keyPress($event)">
-              </textarea>
-            <button ng-click="addIngredient()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add Ingredient(s)</button>
-          </div>
+          <textarea id="ingInput" rows="5" cols="80" placeholder="Copy your ingredients list into this box, or add a single ingredient" 
+          ng-model="addMe" class="w3-input w3-border w3-padding" ng-keypress="keyPress($event)">
+          </textarea>
+        <div class="w3-col s11">
+          <button ng-click="addIngredient()" class="w3-btn w3-padding w3-green" style="background-color:#70bdfa" >Add Ingredient(s)</button>
         </div>
-        <p class="w3-text-red">{{errortext}}</p>
-      </div>
-    </div>
   </div>
 
   <div class="instruct"><h2>Instructions</h2>
+    <ul></ul>
       <textarea rows="5" cols="80" id="instructionsText" ng-model="instructionsText" 
       placeholder="Copy paste the instructions for your recipe here">
       </textarea>

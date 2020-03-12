@@ -8,6 +8,7 @@
    
   <link rel="stylesheet" href="https://use.typekit.net/dtb0fnw.css">
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="myrecipes.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -32,23 +33,25 @@
   </ul>
 </nav>
 
+<div class="Header">Your Saved Recipes</div>
 
-<div class="parText">You don't have any recipes yet.</div>
-<div class ="centerThis" style="text-align: center;">
-<a class= "buttonCSS" href="addRecipe.html" >
-  <input type="button"    value="Add a recipe">
-</a>
-</div>
-
-
-<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl">
-
-<div id="userID" ng-onload ="getUser()"></div>
-<!--
-<div id="displayMe" ng-model="displayUser" ng-onload="getUser()">{{5+5}}</div>
--->
-
-  
+<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="init()">
+    <div ng-repeat="x in user.recipes" class="RecipeItem" ng-click="">
+      <ul>
+        <li>
+          <img class="ImgDisplay"  ng-src={{x.imageUrl}}>
+        </li>
+        <li>
+          <h2>{{x.title}}</h2>
+        </li>
+      </ul>
+    </div>
+    <div class="parText">{{NoRecipes}}</div>
+    <div class ="centerThis" style="text-align: center;">
+      <a class= "buttonCSS" href="addRecipe.html" >
+        <input type="button"    value="Add a recipe">
+      </a>
+  </div>
 </div>
 
 

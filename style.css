@@ -1,45 +1,54 @@
+.AddRecipeClass
+{
+    max-width: 80vw;
+    padding-left: 160px;
+}
+
+.w3-btn
+{
+    min-width: 120px;
+}
+
 .TitleAndImage
 {
     display:flex;
     flex-wrap: wrap;
-    padding-left:240px;
+    min-width: 400px;
 }
 
 .inputBoxen
 {
     display:flex;
     flex-wrap: wrap;
+    min-width: 600px;
 }
 .instruct
 {
-    padding-left:240px;
     font-family: titular, sans-serif;
     font-weight: 300;
     font-size: 150%;
     font-style: normal;
+    width: 50%;
+    min-width: 600px;
 }
 .Shop
 {
-    padding-left:240px;
     font-family: titular, sans-serif;
     font-weight: 300;
     font-size: 150%;
     font-style: normal;
+    width: 50%;
+    min-width: 600px;
 }
-.ImageInput
+.Input
 {
-    padding-left:240px;
     font-family: titular, sans-serif;
     font-weight: 300;
     font-size: 150%;
     font-style: normal;
-    width: 800px;
-}
-.centerThis
-{
-    padding-top: 24px;
-    padding-left:240px;
-    padding-bottom: 80px;
+    width: 50%;
+    min-width: 300px;
+    text-align: left;
 }
 u
 {
@@ -49,6 +58,7 @@ h2
 {
     font-family: titular, sans-serif;
     font-weight:bold;
+    min-height: 32px;
     font-size:80px;
 }
 
@@ -59,13 +69,13 @@ h3
 
 body
 {
-  font-family: giddyup-std, sans-serif;
+  font-family: titular, sans-serif;
 }
 
 
 .nav-link
 {
-    font-family: giddyup-std, sans-serif;
+    font-family: titular, sans-serif;
     font-weight: 800;
 }
 
