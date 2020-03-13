@@ -73,7 +73,16 @@ app.controller("myCtrl", function($scope, $window)
         $scope.errortext = "";
         if (!$scope.addMe) {return;}
         var strs = $scope.addMe.split('\n');
-        
+        filtered = [];
+        strs.forEach(element => {
+          if(element==" " || element=="" || element==undefined || element==null){}
+          else
+          {
+            filtered.push(element);
+          }
+        });
+        strs = filtered;
+        console.log(strs)
         if(strs.length == 1)
         {
           $scope.ingredients.push(strs[0]);
@@ -134,7 +143,16 @@ app.controller("myCtrl", function($scope, $window)
       }
     }
     
-    
+    $scope.addTitle = function() 
+    {
+        console.log("In addTitle");
+        if(!$scope.RecipeTitle || $scope.recipe.title.includes($scope.RecipeTitle)){}
+        else
+        {
+            $scope.recipe.title = $scope.RecipeTitle;
+            console.log($scope.recipe.title);
+        }
+    }
     
     $scope.login = function()
     {

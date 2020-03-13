@@ -33,11 +33,6 @@ h1
     padding-left: 220px;
 }
 
-.nav-link 
-{
-    font-size:20px;
-}
-
 .onlyText
 {
     margin: 0 auto;
@@ -53,6 +48,7 @@ h1
 {
     font-family: titular, sans-serif;
     font-weight: 800;
+    font-size: 24px;
 }
 
 .centerThis

@@ -72,13 +72,6 @@ body
   font-family: titular, sans-serif;
 }
 
-
-.nav-link
-{
-    font-family: titular, sans-serif;
-    font-weight: 800;
-}
-
 li
 {
     font-family: titular, sans-serif;
@@ -88,8 +81,7 @@ li
 #picture
 {
     display:block;
-    width: 100%;
-    height: auto;
+    max-width: 320px;
 }
 
 #AddButton
