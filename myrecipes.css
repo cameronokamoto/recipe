@@ -36,7 +36,11 @@
 .ImgDisplay
 {
     max-width: 150px;
-    border-radius: 4px;
+    max-height: 150px;
+    border-radius: 8px;
+    display: block;
+    margin: auto;
+    margin-top: 8px;
 }
 
 ul
@@ -53,4 +57,26 @@ ul
 u
 {
     text-decoration: underline;
+}
+
+h2
+{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.RecipeItem
+{
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    min-width: 200px;
+    padding-left: 16px;
+}
+
+.DisplayRecipeDiv
+{
+    background-color: #70BDFA;
+    border-radius: 8px;
+    width: 200px;
 }
