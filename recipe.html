@@ -6,12 +6,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
- 
- 
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.typekit.net/dtb0fnw.css">
   <link rel="stylesheet"  href ="main.css">
-  <link rel="stylesheet" href ="login.css">
+  <link rel="stylesheet" href ="recipe.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -19,7 +17,9 @@
   <script src="index.js"></script>
   
 </head>
-<body onload= "getRecipeData()">
+
+<body>
+  <div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="getRecipeData()">
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
   <!-- Brand -->
@@ -30,6 +30,12 @@
     <li class="nav-item">
       <a class="nav-link" href="myRecipes.html">My Recipes</a>
     </li>
+    <li class = "nav-item">
+      <a class = "nav-link"><font color="#70bdfa">--></font></a>
+    </li>
+        <li class = "nav-item">
+     <a class = "nav-link"><font color="#70bdfa"><i id="customLink">{{currRecipe.title}}</i></font></a>
+    </li>
     <li class="nav-item">
       <a class="nav-link" href="addRecipe.html">Add a Recipe</a>
     </li>
@@ -37,31 +43,8 @@
   </ul>
 </nav>
 
-<p id="recipeName"></p>
-<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl">
-    
-    
-     <button ng-click="setDummyData()">Submit</button>
-    
-    </div>
-    
-
-
-
-
-
-
-<script>
-function getRecipeData() {
-    
-
-      document.getElementById("recipeName").innerHTML = localStorage.getItem("user");
-      localStorage.setItem("dsfs","sjslkdsfs");
-      
-      
-}
-</script>		
-
-
+<p id="recipeName">{{currRecipe.title}}</p>
+    <button ng-click="setDummyData()">Submit</button>
+  </div>	
 </body>
 </html>

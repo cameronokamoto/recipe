@@ -37,14 +37,14 @@
 
 <div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="init()">
   <div class="RecipeList">
-    <div ng-repeat="x in user.recipes" class="RecipeItem" ng-click="">
-      <div class="DisplayRecipeDiv" ng-click="setCurrRecipe(x)">
+    <div ng-repeat="x in user.recipes" class="RecipeItem" ng-click="setCurrRecipe(x)">
+      <div class="DisplayRecipeDiv">
         <img class="ImgDisplay"  ng-src={{x.imageUrl}}>
         <h2>{{x.title}}</h2>
-      </div>  
+      </div> 
     </div>
   </div>
-  <div class="parText">{{NoRecipes}}</div>
+  <div class="parText">{{NoRecipes}}</div> 
     <div class ="centerThis" style="text-align: center;">
       <a class= "buttonCSS" href="addRecipe.html" >
         <input type="button"    value="Add a recipe">

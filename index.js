@@ -3,6 +3,7 @@ app.controller("myCtrl", function($scope, $window)
 {
     $scope.ingredients = [];
     $scope.recipe = new recipe;
+    $scope.currRecipe = new recipe;
     $scope.NoRecipes = "You have no recipes yet! Click below to add one!"
     if(localStorage.getItem("user") == undefined)
     {
@@ -127,9 +128,10 @@ app.controller("myCtrl", function($scope, $window)
     // If its empty don't do anything
     $scope.addInstruction = function () 
     {
-      if($scope.instructionsText == "") {}
-      else if(!($scope.instructionsText == $scope.recipe.instructions) 
-        && $scope.recipe.instructions != "")
+      if($scope.instructionsText == "" || 
+         $scope.instructionsText == $scope.recipe.instructions) {}
+      else if(($scope.instructionsText != $scope.recipe.instructions)
+               && $scope.recipe.instructions != "")
       {
           if(confirm("You want to overwrite the current instructions?"))
           {
@@ -162,12 +164,15 @@ app.controller("myCtrl", function($scope, $window)
       console.log($scope.inputText1);
       console.log($scope.userText);
       //document.getElementById("userID").innerHTML = localStorage.getItem("user");
-
+      $scope.setDummyData()
       $window.location.href ="myRecipes.html";
-      
-      
     }
-    
+
+    $scope.getRecipeData = function()
+    {
+      $scope.currRecipe = localStorage.getItem("currRecipe");
+      console.log($scope.currRecipe);
+    }
     
     $scope.makeUser = function()
     {
@@ -177,10 +182,27 @@ app.controller("myCtrl", function($scope, $window)
     
     $scope.setDummyData = function()
     {
+      console.log("setting dummy data")
       //$scope.recipe.instructions = "sdfjaisdofjsoifjosdijfoidsjfods";
       //localStorage.setItem("currRecipe",this.recipe);
+      this.recipe.title = "Spaghetti";
+      this.recipe.imageUrl ="https://www.errenskitchen.com/wp-content/uploads/2015/02/Quick-Easy-Spaghetti-Bolognese2-1-500x480.jpg";
+      this.recipe.ingredients = ["noodles","tomato sauce", "brown sugar", "1/2 lb ground beef","3 onions"];
+      this.recipe.instructions = "Combine milk with vinegar in a medium bowl and set aside for 5 minutes to sour. Combine flour, sugar, baking powder, baking soda, and salt in a large mixing bowl. Whisk egg and butter into soured milk. Pour the flour mixture into the wet ingredients and whisk until lumps are gone.Heat a large skillet over medium heat, and coat with cooking spray. Pour 1/4 cupfuls of batter onto the skillet, and cook until bubbles appear on the surface. Flip with a spatula, and cook until browned on the other side.";
       
       localStorage.setItem("currRecipe",JSON.stringify(this.recipe));
+    }
+
+    $scope.setCurrRecipe = function(toSet)
+    {
+      toStore = new recipe;
+      toStore.title = toSet.title;
+      toStore.instructions = toSet.instructions;
+      toStore.imageUrl = toSet.imageUrl
+      toStore.ingredients = toSet.ingredients
+      console.log("In setCurrRecipe", toStore);
+      localStorage.setItem("currRecipe", toStore);
+      $window.location.href = "recipe.html";
     }
 
     

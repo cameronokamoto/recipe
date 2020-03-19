@@ -18,7 +18,7 @@
     font-family: titular, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 50px;
+    font-size: 60px;
     padding-top:200px;
 }
 
@@ -35,8 +35,8 @@
 
 .ImgDisplay
 {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 160px;
+    max-height: 160px;
     border-radius: 8px;
     display: block;
     margin: auto;
@@ -78,5 +78,6 @@ h2
 {
     background-color: #70BDFA;
     border-radius: 8px;
-    width: 200px;
+    width: 220px;
+    height: 220px;
 }

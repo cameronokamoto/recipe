@@ -29,3 +29,24 @@ h2
 {
   font-family: titular, sans-serif;
 }
+
+.labels
+{
+  font-family: titular, sans-serif;
+​  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+#currRecipe
+{
+  font-size:100px;
+  font-family: titular, sans-serif;
+  font-weight: 600;
+  padding-left: 80px;
+     
+}
+#customLink
+{
+  color:"#70bdfa";
+}
