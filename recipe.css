@@ -1,5 +1,3 @@
-
-
 h1
 {
   font-family: titular, sans-serif;
@@ -9,15 +7,12 @@ h1
 }
 h2
 {
-  font-family: titular, sans-serif; 
+  font-family: 'Times New Roman', Times, serif; 
 }
 
-.container
+.flex-container
 {
-  font-family: titular, sans-serif;
-  background-image: url("https://imgc.allpostersimages.com/img/print/u-g-Q1052Q40.jpg?w=550&h=550&p=0");
-  width:900px;
-  border-radius: 25px;
+  display: flex;
 }
 
 .cities
@@ -25,17 +20,36 @@ h2
   font-size: 100px;
 }
 
-.Root div
+.labels
+{
+  flex-wrap: wrap;
+  padding: 24px;
+  margin: 16px;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: normal;
+  font-family: titular, sans-serif;
+  max-width: 400px;
+  background-color: #70bdfa;
+  border-radius: 16px;
+}
+
+.Root
 {
   font-family: titular, sans-serif;
 }
 
-.labels
+img
 {
-  font-family: titular, sans-serif;
-​  font-size: 60px;
-  font-style: normal;
-  font-weight: 600;
+  max-width: 360px;
+  max-height: 360px;
+  border-radius: 16px;
+}
+
+#recipeName
+{
+  font-size: 60px;
+  text-align: center;
 }
 
 #currRecipe
@@ -46,6 +60,7 @@ h2
   padding-left: 80px;
      
 }
+
 #customLink
 {
   color:"#70bdfa";

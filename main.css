@@ -17,12 +17,26 @@ h1
     font-style: normal;
 }
 
+.loginbutton
+{
+    width: 10%;
+    margin-left: 45%;
+    margin-right: 45%;
+}
+
 #Shop 
 {
     padding-top: 40px;
     padding-right: 80px;
     padding-bottom: 16px;
     padding-left: 220px;
+}
+
+.CenterLogo
+{
+    display: block;
+    margin: auto;
+    width: 600px;
 }
 
 #Instructions
@@ -40,8 +54,8 @@ h1
     font-family: titular, sans-serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 200px;
-    padding-top:200px;
+    font-size: 72px;
+    padding-top: 40px;
 }
   
 .nav-link

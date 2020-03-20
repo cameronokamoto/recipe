@@ -13,6 +13,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+  <script src="index.js"></script>
 </head>
 <body>
 
@@ -30,8 +32,11 @@
     </li>
   </ul>
 </nav>
-
-<div class="onlyText">Just recipes</div>
+<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="init()">
+  <img class="CenterLogo" src="onlyRecipes logo.png">
+  <div class="onlyText">Just recipes, nothing more</div>
+  <input class="loginbutton" type="button" ng-click="GoTo()" value={{loginOrNot}}>
+</div>
 
 </body>
 </html>

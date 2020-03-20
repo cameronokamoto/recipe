@@ -4,7 +4,10 @@ app.controller("myCtrl", function($scope, $window)
     $scope.ingredients = [];
     $scope.recipe = new recipe;
     $scope.currRecipe = new recipe;
+    $scope.destination="login.html"
+    $scope.loginOrNot="Login/Sign Up"
     $scope.NoRecipes = "You have no recipes yet! Click below to add one!"
+    $scope.user = new user;
     if(localStorage.getItem("user") == undefined)
     {
       $scope.user = new user();
@@ -20,10 +23,12 @@ app.controller("myCtrl", function($scope, $window)
 
     $scope.init = function()
     {
-      localStorage.setItem("user", JSON.stringify($scope.user))
+      console.log("initing");
       if(localStorage.getItem("user") != null)
       {
         $scope.user = JSON.parse(localStorage.getItem("user"))
+        $scope.loginOrNot = "My Recipes"
+        $scope.destination = "myRecipes.html"
         console.log($scope.user)
       }
       else
@@ -106,6 +111,11 @@ app.controller("myCtrl", function($scope, $window)
         $scope.recipe.imageUrl = $scope.imageURL;
       }
     }
+
+    $scope.GoTo = function()
+    {
+      window.location.href=$scope.destination
+    }
     // The enter key should trigger the addIngredients function while in the 
     // ingredients text box
     $scope.keyPress = function($event)
@@ -144,11 +154,13 @@ app.controller("myCtrl", function($scope, $window)
         $scope.recipe.instructions = $scope.instructionsText
       }
     }
-    
+    // Adding a title to a recipe
     $scope.addTitle = function() 
     {
         console.log("In addTitle");
-        if(!$scope.RecipeTitle || $scope.recipe.title.includes($scope.RecipeTitle)){}
+        if(!$scope.RecipeTitle || 
+          $scope.recipe.title.includes($scope.RecipeTitle) ||
+          $scope.RecipeTitle.length > 100){}
         else
         {
             $scope.recipe.title = $scope.RecipeTitle;
@@ -160,17 +172,15 @@ app.controller("myCtrl", function($scope, $window)
     {
       $scope.user.username = $scope.userText;
       $scope.user.password = $scope.passwordText;
-      localStorage.setItem("user",$scope.userText);
-      console.log($scope.inputText1);
-      console.log($scope.userText);
-      //document.getElementById("userID").innerHTML = localStorage.getItem("user");
       $scope.setDummyData()
+      localStorage.setItem("user", JSON.stringify($scope.user));
+      //document.getElementById("userID").innerHTML = localStorage.getItem("user");
       $window.location.href ="myRecipes.html";
     }
 
     $scope.getRecipeData = function()
     {
-      $scope.currRecipe = localStorage.getItem("currRecipe");
+      $scope.currRecipe = JSON.parse(localStorage.getItem("currRecipe"));
       console.log($scope.currRecipe);
     }
     
@@ -182,26 +192,22 @@ app.controller("myCtrl", function($scope, $window)
     
     $scope.setDummyData = function()
     {
-      console.log("setting dummy data")
+      dummy = new recipe;
+      console.log("setting dummy data");
       //$scope.recipe.instructions = "sdfjaisdofjsoifjosdijfoidsjfods";
-      //localStorage.setItem("currRecipe",this.recipe);
-      this.recipe.title = "Spaghetti";
-      this.recipe.imageUrl ="https://www.errenskitchen.com/wp-content/uploads/2015/02/Quick-Easy-Spaghetti-Bolognese2-1-500x480.jpg";
-      this.recipe.ingredients = ["noodles","tomato sauce", "brown sugar", "1/2 lb ground beef","3 onions"];
-      this.recipe.instructions = "Combine milk with vinegar in a medium bowl and set aside for 5 minutes to sour. Combine flour, sugar, baking powder, baking soda, and salt in a large mixing bowl. Whisk egg and butter into soured milk. Pour the flour mixture into the wet ingredients and whisk until lumps are gone.Heat a large skillet over medium heat, and coat with cooking spray. Pour 1/4 cupfuls of batter onto the skillet, and cook until bubbles appear on the surface. Flip with a spatula, and cook until browned on the other side.";
-      
-      localStorage.setItem("currRecipe",JSON.stringify(this.recipe));
+      //localStorage.setItem("currRecipe",this.recipe)
+      dummy.title = "Spaghetti";
+      dummy.imageUrl ="https://www.errenskitchen.com/wp-content/uploads/2015/02/Quick-Easy-Spaghetti-Bolognese2-1-500x480.jpg";
+      dummy.ingredients = ["noodles","tomato sauce", "brown sugar", "1/2 lb ground beef","3 onions"];
+      dummy.instructions = "Combine milk with vinegar in a medium bowl and set aside for 5 minutes to sour. Combine flour, sugar, baking powder, baking soda, and salt in a large mixing bowl. Whisk egg and butter into soured milk. Pour the flour mixture into the wet ingredients and whisk until lumps are gone.Heat a large skillet over medium heat, and coat with cooking spray. Pour 1/4 cupfuls of batter onto the skillet, and cook until bubbles appear on the surface. Flip with a spatula, and cook until browned on the other side.";
+      $scope.user.recipes.push(dummy)
+      localStorage.setItem("currRecipe",JSON.stringify(dummy));
     }
 
     $scope.setCurrRecipe = function(toSet)
     {
-      toStore = new recipe;
-      toStore.title = toSet.title;
-      toStore.instructions = toSet.instructions;
-      toStore.imageUrl = toSet.imageUrl
-      toStore.ingredients = toSet.ingredients
-      console.log("In setCurrRecipe", toStore);
-      localStorage.setItem("currRecipe", toStore);
+      console.log("In setCurrRecipe", toSet);
+      localStorage.setItem("currRecipe", JSON.stringify(toSet));
       $window.location.href = "recipe.html";
     }
 

@@ -38,19 +38,19 @@
 
 <br>
 <br>
-<h1>Store all your recipes here</h1>
+<h1 align="center">Store all your recipes here</h1>
 
 <br>
 <br>
 
-<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl">
+<div ng-app="OnlyRecipes" ng-cloak ng-controller="myCtrl" data-ng-init="init()">
 
 
 
   
   
   <div class="container">
-    <div id="signUpText">Sign Up</div>
+    <div id="signUpText">Login/Sign Up</div>
   <form id="loginForm">
    
     <div id="loginLabels">Username:</div>
@@ -65,7 +65,7 @@
       <label class="form-check-label">
         <input class="form-check-input" type="checkbox" name="remember"> Remember me
       </label>
-      
+    <br>
     <button ng-click="login()" class="btn btn-primary">Submit</button>
   </form>
 </div>

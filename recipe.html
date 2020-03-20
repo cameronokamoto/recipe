@@ -44,7 +44,23 @@
 </nav>
 
 <p id="recipeName">{{currRecipe.title}}</p>
-    <button ng-click="setDummyData()">Submit</button>
-  </div>	
+  <div class="flex-container">
+    <div class="labels">
+     <h2>Ingredients</h2>
+      <li ng-repeat="x in currRecipe.ingredients">{{x}}</li>
+    </div>
+    
+    <div>
+      <div class="labels">
+        <h2>Instructions</h2>
+        {{currRecipe.instructions}}
+      </div>
+    </div>
+    <span class="labels">
+      <img class="picture" ng-src="{{currRecipe.imageUrl}}">
+    </span>
+  </div>
+    <!-- <button ng-click="setDummyData()">Submit</button> -->
+</div>
 </body>
 </html>

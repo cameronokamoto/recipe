@@ -5,10 +5,12 @@ h1
   font-style: normal;
   font-weight: 600;
 }
+
 h2
 {
   font-family: titular, sans-serif; 
 }
+
 #signUpText
 {
   font-size: 50px;
@@ -27,15 +29,14 @@ h2
   font-family: titular, sans-serif;
   background-image: url("https://imgc.allpostersimages.com/img/print/u-g-Q1052Q40.jpg?w=550&h=550&p=0");
   width:900px;
-  border-radius: 25px;
+  border-radius: 16px;
   font-weight: 300;
 }
-
 
 #usernameTextBox
 {
   width:750px;
-  font-size:14pt;
+  font-size:16pt;
 }
 
 .cities
